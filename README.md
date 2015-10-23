@@ -12,7 +12,8 @@ In case you are wondering how to make shared localization library with Xamarin t
 
 ##How to use
 
-1.  Check your project build order and make sure that PCL that contains .resx builds before WinRT project ![](http://i.imgur.com/CaI1R9Z.png) ![](http://i.imgur.com/LEpkUs9.png)
+1.  Check your project build order and make sure that PCL that contains .resx builds before WinRT project 
+  ![](http://i.imgur.com/CaI1R9Z.png) ![](http://i.imgur.com/LEpkUs9.png)
 2. Create default localization folder structure in your WinRT project for example: ![](http://i.imgur.com/I9FBd3n.png)
   - Strings
       - ar
