@@ -37,3 +37,10 @@ In case you are wondering how to make shared localization library with Xamarin t
   
   ![](http://i.imgur.com/y3h9aZI.png)
 8. Rebuild again and now you can reach your imported .resw from C# code
+
+### Troubleshooting
+
+If you are encountering ResourceMap not found error then create dummy "Resource.resw" file in every /Strings/language folder
+
+It doesn't have to contain anything
+
