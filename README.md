@@ -32,5 +32,5 @@ In case you are wondering how to make shared localization library with Xamarin t
   "$(SolutionDir)\ResxHell\ResxHell.exe" -export "$(ProjectDir)\"
   ```
 6. Build your WinRT project - it can fail when building for the first time
-7. On solution explorer click "Show all files" button and select all new files > Include in project You will have to do this every time a new .resx is added in a Portable Class Library ![]((http://i.imgur.com/y3h9aZI.png)
+7. On solution explorer click "Show all files" button and select all new files > Include in project You will have to do this every time a new .resx is added in a Portable Class Library ![](http://i.imgur.com/y3h9aZI.png)
 8. Rebuild again and now you can reach your imported .resw from C# code
