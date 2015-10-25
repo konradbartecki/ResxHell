@@ -12,7 +12,6 @@ namespace ResxHell
     {
         private static void Main(string[] args)
         {
-            Presenter.Print(Presenter.HelloStrings);
             var argsList = args.ToList();
             if (argsList.Contains("-help")
                 || argsList.Contains("/?")
@@ -22,6 +21,14 @@ namespace ResxHell
                 Presenter.Print(Presenter.HelpStrings);
                 return;
             }
+
+            Presenter.Print(Presenter.HelloStrings);
+
+            if (argsList.Contains("-verbose"))
+            {
+                Config.ShowVerbose = true;
+            }
+
             if (argsList.Contains("-fallbackLang"))
             {
                 int i = argsList.IndexOf("-fallbackLang");
@@ -39,8 +46,9 @@ namespace ResxHell
                 try
                 {
                     int i = argsList.IndexOf("-import");
-                    string path = argsList[i + 1];
-                    Console.WriteLine("Got path: {0}", path);
+                    string rawpath = argsList[i + 1];
+                    string path = Helpers.GetCorrectPath(rawpath);
+                    Console.WriteLine("Import path: {0}", path);
                     ResourcesManagement.ImportAndRenameResxFiles(path);
                     Console.WriteLine("Imported and converted resource files");
                 }
@@ -54,11 +62,13 @@ namespace ResxHell
             if (argsList.Contains("-export"))
             {
                 try
-                {
+                { 
                     int i = argsList.IndexOf("-export");
-                    string path = argsList[i + 1];
-                    Console.WriteLine("Got path: {0}", path);
+                    string rawpath = argsList[i + 1];
+                    string path = Helpers.GetCorrectPath(rawpath);
+                    Console.WriteLine("Export path: {0}", path);
                     ResourcesManagement.DetectLanguagesAndSort(path);
+                    Console.WriteLine("Exported resource files");
                 }
                 catch (Exception e)
                 {

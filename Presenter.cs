@@ -9,8 +9,8 @@ namespace ResxHell
 {
     public static class Presenter
     {
-        public static string[] HelpStrings = new[]
-        {
+        public static string[] HelpStrings = {
+            "",
             "Converts .resx to .resw and sorts resource files",
             "into native WinRT directories /Strings/{language}/resource.resw",            
             "",
@@ -20,8 +20,11 @@ namespace ResxHell
             "                   folder and converts to .resw",
             "  -export          Exports .resw files from local temp folder to specified path",
             "                   and sorts resources into language folders",
+            "  -verbose         Show additional details",
             "  -fallbackLang    [Optional] [Default = \"en\"] Sets fallback language when ",
             "                   the .resx does not have it's own language qualifier",
+            "  -workingDir      [Optional] Set directory where to resource files",
+            "                   imported and exported",
             "",
             "This program is designed to work with Visual Studio pre-build event",
             "so you can put for example:",
@@ -31,11 +34,11 @@ namespace ResxHell
             "pre-build event on your Windows RT 8.1+ project",
         };
 
-        public static string[] HelloStrings = new[]
-        {
-            "ResxHell v.1.0 B2 by Konrad Bartecki",
+        public static string[] HelloStrings = {
+            "ResxHell v.1.1 by Konrad Bartecki",
             "Source code available at github.com/konradbartecki",
-            "Contact email: konradbartecki@outlook.com"
+            "Contact email: konradbartecki@outlook.com",
+            ""
         };
 
         public static void Print(string[] strings)

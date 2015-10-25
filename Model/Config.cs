@@ -9,6 +9,7 @@ namespace ResxHell.Model
 {
     public static class Config
     {
+        public static bool ShowVerbose = false;
         public static string LocalDir = Path.Combine(GetCurrentExeDir(),
             @"ResxTempFiles\");
         public static string DefaultLanguage = "en";

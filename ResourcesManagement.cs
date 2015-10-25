@@ -11,17 +11,23 @@ namespace ResxHell
     public static class ResourcesManagement
     {
         public static void ImportAndRenameResxFiles(string path)
-        {
+        {           
             Directory.CreateDirectory(Config.LocalDir);
             ClearImportDirectory();
-            var stringfiles = Directory.GetFiles(path, "*.resx", SearchOption.TopDirectoryOnly);
+            var stringfiles = Directory.GetFiles(path, "*.resx", SearchOption.AllDirectories);
+            if(Config.ShowVerbose)
+                Console.WriteLine("Detected {0} .resx files", stringfiles.Count());
             foreach (string s in stringfiles)
             {
                 var filename = Path.GetFileNameWithoutExtension(s);
                 var newFilename = filename + ".resw";
+                if (Config.ShowVerbose)
+                {
+                    Console.WriteLine("Copying file {0}", Path.GetFileName(s));
+                }
                 File.Copy(s, Path.Combine(Config.LocalDir, newFilename));
             }
-            Console.WriteLine("Copied and renamed {0} resource files", stringfiles.Count());
+            Console.WriteLine("Imported {0} resource files", stringfiles.Count());
         }
 
         public static void DetectLanguagesAndSort(string path)
@@ -68,6 +74,8 @@ namespace ResxHell
         }
         private static void AddOnce(List<string> list, List<ResourceFile> resourceFiles, string resourceLang, string path)
         {
+            if(Config.ShowVerbose)
+                Console.WriteLine("- File: {0} - detected as: {1} language", Path.GetFileName(path), resourceLang);
             resourceFiles.Add(new ResourceFile { Path = path, Language = resourceLang });
             if (list.Contains(resourceLang)) return;
             Console.WriteLine("New language detected: {0}", resourceLang);
