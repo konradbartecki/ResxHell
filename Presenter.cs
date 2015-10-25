@@ -14,7 +14,7 @@ namespace ResxHell
             "Converts .resx to .resw and sorts resource files",
             "into native WinRT directories /Strings/{language}/resource.resw",            
             "",
-            "ResxHell.exe -import SOURCEPATH -export DESTINATIONPATH -fallbackLang ru",
+            "ResxHell.exe -verbose -import SOURCEPATH -export DESTINATIONPATH -fallbackLang ru",
             "",
             "  -import          Imports .resx files from path recursively to local temporary",
             "                   folder and converts to .resw",
@@ -28,9 +28,9 @@ namespace ResxHell
             "",
             "This program is designed to work with Visual Studio pre-build event",
             "so you can put for example:",
-            "   ResxHell.exe -import \"$(ProjectDir)\"",
+            "   ResxHell.exe -import \"$(ProjectDir)\\\"",
             "on your localization PCL post-build event and",
-            "   ResxHell.exe -export \"$(ProjectDir)\"",
+            "   ResxHell.exe -export \"$(ProjectDir)\\\"",
             "pre-build event on your Windows RT 8.1+ project",
         };
 
