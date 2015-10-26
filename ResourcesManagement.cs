@@ -65,8 +65,9 @@ namespace ResxHell
             foreach (ResourceFile resourceFile in ResourceFiles)
             {
                 string filename = Path.GetFileName(resourceFile.Path);
-                string LanguageDirectoryPath = Path.Combine(path, resourceFile.Language + @"\");
-                string newFilePath = Path.Combine(LanguageDirectoryPath, filename);
+                string filenameWithoutLangQualifier = filename.Replace("." + resourceFile.Language, "");
+                string languageDirectoryPath = Path.Combine(path, resourceFile.Language + @"\");
+                string newFilePath = Path.Combine(languageDirectoryPath, filenameWithoutLangQualifier);
                 if(File.Exists(newFilePath))
                     File.Delete(newFilePath);
                 File.Move(resourceFile.Path, newFilePath);
