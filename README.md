@@ -40,7 +40,10 @@ In case you are wondering how to make shared localization library with Xamarin t
 
 ### Troubleshooting
 
-If you are encountering ResourceMap not found error then create dummy "Resource.resw" file in every /Strings/language folder
 
-It doesn't have to contain anything
+##### Resource map not found
+Create dummy "Resource.resw" file in every /Strings/language folder
+##### I am still getting MdilXapCompile.exe failed with error code 1004
+Remove reference to your localization PCL, but ensure it builds earlier than your Windows Runtime project
+
 
