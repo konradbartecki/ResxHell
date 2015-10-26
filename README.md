@@ -1,6 +1,8 @@
 # ResxHell
 Middle-build tool for Visual Studo that allows for automatic conversion of .resx resources from PCL to native Windows Runtime 8.1 .resw resources every build.
 
+![](http://i.imgur.com/8nVUj3W.png)
+
 ##Why ResxHell?
 
 In case you are wondering how to make shared localization library with Xamarin that works on iOS, Android and Windows Phone 8.1 - you could make an shared PCL and place .resx resources there, but it won't really work in WP8.1. By using this tool you can automatically convert .resx to native WP8.1 format .resw and move them to WP project every build, so you don't have to copy it manually to every project everytime PCL with .resx was updated.
