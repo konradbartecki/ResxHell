@@ -35,7 +35,7 @@ namespace ResxHell
         };
 
         public static string[] HelloStrings = {
-            "ResxHell v.1.1 by Konrad Bartecki",
+            "ResxHell v.1.2 by Konrad Bartecki",
             "Source code available at github.com/konradbartecki",
             "Contact email: konradbartecki@outlook.com",
             ""
