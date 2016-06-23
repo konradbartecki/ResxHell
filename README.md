@@ -45,7 +45,7 @@ In case you are wondering how to make shared localization library with Xamarin t
 Create dummy "Resource.resw" file in every /Strings/language folder
 ##### I am still getting MdilXapCompile.exe failed with error code 1004
 Remove reference to your localization PCL, but ensure it builds earlier than your Windows Runtime project
-##### Resources won't work if I am creating the app package
+##### Resources won't work when I am creating the app package
 Build your app package with "Make app bundle" set to "Never"
 
 
